@@ -35,6 +35,16 @@ export const billingInfoSchema = z.object({
 export type PersonalInfoType = z.infer<typeof personInfoSchema>;
 export type ProfessionalInfoType = z.infer<typeof professionalInfoSchema>;
 export type BillingInfoType = z.infer<typeof billingInfoSchema>;
-export type FormDataType = PersonalInfoType &
+export type AllFromDataType = PersonalInfoType &
   ProfessionalInfoType &
   BillingInfoType;
+export type FormDataType =
+  | PersonalInfoType
+  | ProfessionalInfoType
+  | BillingInfoType;
+
+export interface Step {
+  id: string;
+  name: string;
+  icon: React.ReactNode;
+}
